@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+if [[ -t 0 ]]; then
+    # stdin is a terminal
+    docker run --rm -it flatter $@
+else
+    # stdin is not a terminal
+    docker run --rm -i flatter $@
+fi
